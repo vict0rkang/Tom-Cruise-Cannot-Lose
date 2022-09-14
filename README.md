@@ -1,3 +1,5 @@
+![graph1](./images/Tom-Cruise.jpeg)
+
 # Tom Cruise Cannot Lose
 
 **Authors**: Victor Kang
@@ -79,18 +81,16 @@ Here is an example of how to embed images from your sub-folder:
 
 ## Conclusions
 
-Provide your conclusions about the work you've done, including any limitations or next steps.
+In today's modern world, a movie's financial performance defines it's success. Studios are only interested in Profit and their Return-On-Investment. 
 
-***
-Questions to consider:
-* What would you recommend the business do as a result of this work?
-* What are some reasons why your analysis might not fully solve the business problem?
-* What else could you do in the future to improve this project?
+Based off the data analysis, I would recommend to Microsoft's new Movie Studio to secure a **production budget of ~$125M** to make the next **Action & Adventure** movie starring **Tom Cruise** and **Emma Watson**, with **Anthony Russo** directing a story written by **Christophr Markus**.
+
+This combination is almost guaranteed to be the greatest movie of all time.
 ***
 
 ## For More Information
 
-Please review our full analysis in [our Jupyter Notebook](./dsc-phase1-project-FINAL.ipynb) or our [presentation](./Tom Cruise Cannot Lose - Presentation.pdf).
+Please review the full analysis in [the Jupyter Notebook](./dsc-phase1-project-FINAL.ipynb) or the [presentation](./Tom Cruise Cannot Lose - Presentation.pdf).
 
 For any additional questions, please contact **Victor Kang - mr.victorkang@gmail.com**
 
