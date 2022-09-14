@@ -1,72 +1,108 @@
-# Phase 1 Project Template - Minimum Viable Product (MVP)
+# Tom Cruise Cannot Lose
 
-![blueprint](images/blueprint.png)
+**Authors**: Victor Kang
 
-This repository is like a blueprint, providing structure for your first End of Phase Project. We suggest you base your Phase 1 project off of this repository so you can focus less on formatting and organization, and more on the _analysis and communication skills_ that will support your progress through the course. This template is designed to make your project portfolio-ready in order to impress the future employers who will review it. 
+## Overview
 
-## Repository Contents
-
-Below is a list of the contents of this repository - instructions for using them are in the next section.
-
-- `README.md`: The README for this repo branch explaining it's contents - you're reading it now
-- `TEMPLATE_README.md`: An example of a project README that provides a brief overview of your whole project
-- `dsc-phase1-project-template.ipynb`: A starter Jupyter Notebook with headings, code examples and guiding questions
-- `DS_Project_Presentation_Template.pdf`: A starter slide deck presenting your project - here is an [editable version](https://docs.google.com/presentation/d/1PaiH1bleXnhiPjTPsAXQSiAK0nkaRlseQIr_Yb-0mz0/copy)
-- `zippedData` folder: A folder for the data you reference with your code
-- `images` folder: A folder for the images you reference in your files 
-- `.gitignore`: A hidden file that tells git to not track certain files and folders
-
-## Instructions For Using This Repository
-
-### Fork This Repository
-
-**For a group project**, have only one team member do these steps:
-
-1. Fork this repository to your personal account
-   - In GitHub, go to this repository and click the "Fork" button in the upper right
-   
-2. Change the name of your fork of this repo to a _descriptive_ name of your choosing
-   - In GitHub, go to your fork of this repo -> "Settings" -> "Options" -> "Repository Name" -> "Rename"
-   - Make the name descriptive, since potential employers will read it. Ex: "Microsoft-Movie-Analysis" is better than "Project-1"
-
-3. Use `git clone` to clone your fork of this repo to your local computer
-
-4. **For a group project**, add team members as collaborators to your fork of this repo
-   - In GitHub, go to your fork of this repo -> "Settings" -> "Manage Access" -> "Invite Teams or People"
-   - Add your project team members as collaborators & send them the repo GitHub URL
-
-### Work In Your Fork Of This Repository
-
-- Work in the repo clone that you created on your local machine
-- Start writing and coding in the Jupyter Notebook `dsc-phase1-project-template.ipynb`
-- Fill in the README template in `TEMPLATE_README.md`
-- Use `git add`, `git commit`, and `git push` often to update your repo in GitHub
-   - For a refresher on how to do this and why it's important, review Topic 2: Bash and Git
-
-### Use The Slide Template
-
-1. Go to [this link](https://docs.google.com/presentation/d/1PaiH1bleXnhiPjTPsAXQSiAK0nkaRlseQIr_Yb-0mz0/copy) to make an editable copy of the slide deck in your own Google Drive account
-2. Go to "Slide," select "Change Theme," and pick a theme you like so your presentation doesn't look like everyone else's
-3. **For a group project**, click the "Share" button and add your teammates as editors
-
-### Tidy Up Your Project
-
-- Change the file name of the Jupyter Notebook (`dsc-phase1-project-template.ipynb`) to something more descriptive
-- Save an appropriately-named PDF version of your slide deck to the repository
-- Rename the template readme you've been working in by running `git mv TEMPLATE_README.md README.md`
-- Delete unnecessary files from the repo using `git rm`
-   - The presentation PDF: `DS_Project_Presentation_Template.pdf`
-   - Any unused data files in the `zippedData` folder
-   - Any unused images in the `images` folder
-- Utilize the .gitignore file to ignore large unzipped data files in the `zippedData` folder
-   - Add `*.csv`,`*.tsv`, and `*.db` to the .gitignore file
-
-### Submit Your Project
-
-To submit your project, please follow the instructions in the "Project Submission & Review" page in the Milestones course.
+In today's modern world, especially during and after the pandemic, the movie industry is mightily struggling to stay afloat and get back to normal. A single bad movie could spell the financial doom of an entire studio! That's why every decision a studio makes has taken on exponential weight and risk. That is why most movie studios are turning to data science to help guide their decision making! In this notebook, financial performance data from publicly-available online movie databases will be analyzed to identify only the most successful movies out of the most recent 5000 released movies to-date. Relationships, trends, and metrics will be explored to produce budget, genre, and cast and crew recommendations that will give a new movie studio their best chance at making their first financially successful debut movie!
 
 ***
-### Notes
+## Business Problem
 
-- The visualizations in the notebook use best practices for visualization that you should try to emulate. For example, they have clear axes, descriptive titles, and appropriate number formatting
-- The `dsc-phase1-project-template.ipynb` is intended to be the _final version_ of your project. The first notebook you create will not look like this. You are encouraged to start with a very disorderly notebook and clean it as you go
+Microsoft has been suffering from a severe case of FOMO (Fear-Of-Missing-Out) as they've watched many of their competitors succeed in opening up their own movie studios and creating original video content! Microsoft wants in on the action and is now opening their own movie studio! I've been tasked with providing critical data-based market research to ensure that Microsoft's first movie will be a global success!
+
+***
+#### Primary Objectives and Qualifications:
+1. Explore and analyze what **types** of films are **currently** doing the **best at the box office**.
+* The key terms here in bold must first be defined. For this Project, they shall be defined as follows:
+>* **Types**: There are many ways to classify or categorize films, most common being by Genre. We can also categorize movies by their budget range, ie. big budget vs small budget.
+>* **Currently**: Because Microsoft asked for "currently", we know we should only consider modern movies in our upcoming analysis. Exactly how modern will be influenced by our available data. Specific Date Range To Be Determined! But we should at minimum aim to include movies released this year (2022)!
+>* **Best at the Box Office**: "Best" will be defined solely by the financial performance of movies at the Worldwide Box Office. To measure financial performance, we will explore the Worldwide Box Office Gross of movies and compare it to their Production Budgets to calculate the *Profit/Loss* and *Return-On-Investment* metrics.  
+
+* In short, our first objective is to determine which Genres and Budget Ranges of modern movies have produced the highest profit and return-on-investment for their movie studios! 
+
+2. Provide **(3) actionable insights / concrete business recommendations** based on the analysis. 
+* We plan to provide budget range recommendations and how budgets could have a relationship to financial success.
+* Genre Recommendations
+* Recommendations for cast and crew! Actor, Actress, Director, and Writer recommendations.
+***
+
+## Data
+
+### Prelimary Data Exploration
+
+Provided Data for Project:
+* **Box Office Mojo**, compressed CSV file
+* **Rotten Tomatoes**, 2 compressed TSV files
+* **TheMovieDB**, compressed CSV file
+* **The Numbers**, compressed CSV file
+* **IMDB**, SQLlite database
+
+In my search for up-to-date and current movie data, I was able to find (3) outside sources to supplement our datasets as follow:
+> 1. **movie_gross_data.csv** : Maintained Box Office Mojo dataset; From Kaggle https://www.kaggle.com/
+> 2. **movies budgets.csv** : Maintained comprehensive movie dataset including Budgets; From Kaggle https://www.kaggle.com/
+> 3. Below files were the latest individual IMDB table downlaods. Data courtesy of IMDb. https://datasets.imdbws.com/
+***only bolded files were used and included in the zippedData folder of the repository**
+>* **name.basics.tsv.gz**
+>* title.akas.tsv.gz
+>* **title.basics.tsv.gz**
+>* title.crew.tsv.gz
+>* title.episode.tsv.gz
+>* **title.principals.tsv.gz**
+>* title.ratings.tsv.gz
+***
+
+## Methods
+
+Describe the process for analyzing or modeling the data. For Phase 1, this will be descriptive analysis.
+
+***
+Questions to consider:
+* How did you prepare, analyze or model the data?
+* Why is this approach appropriate given the data and the business problem?
+***
+
+## Results
+
+Present your key results. For Phase 1, this will be findings from your descriptive analysis.
+
+***
+Questions to consider:
+* How do you interpret the results?
+* How confident are you that your results would generalize beyond the data you have?
+***
+
+Here is an example of how to embed images from your sub-folder:
+
+### Visual 1
+![graph1](./images/viz1.png)
+
+## Conclusions
+
+Provide your conclusions about the work you've done, including any limitations or next steps.
+
+***
+Questions to consider:
+* What would you recommend the business do as a result of this work?
+* What are some reasons why your analysis might not fully solve the business problem?
+* What else could you do in the future to improve this project?
+***
+
+## For More Information
+
+Please review our full analysis in [our Jupyter Notebook](./dsc-phase1-project-FINAL.ipynb) or our [presentation](./Tom Cruise Cannot Lose - Presentation.pdf).
+
+For any additional questions, please contact **Victor Kang - mr.victorkang@gmail.com**
+
+## Repository Structure
+
+Describe the structure of your repository and its contents, for example:
+
+```
+├── README.md                                     <- The top-level README for reviewers of this project
+├── dsc-phase1-project-FINAL.ipynb                <- Final narrative documentation of analysis in Jupyter notebook
+├── dsc-phase1-project-template.ipynb             <- Dirty notebook showing previous work
+├── Tom Cruise Cannot Lose - Presentation.pdf     <- PDF version of project presentation
+├── zippedData                                    <- Both sourced externally and generated from code
+└── images                                        <- Both sourced externally and generated from code
+```
