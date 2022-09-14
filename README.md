@@ -56,28 +56,32 @@ In my search for up-to-date and current movie data, I was able to find (3) outsi
 
 ## Methods
 
-Describe the process for analyzing or modeling the data. For Phase 1, this will be descriptive analysis.
+Our objective is to discern what types of modern movies perform the best financially. We can simplify this objective by breaking it down into (2) general steps.
 
+* **Step 1**: Generate Data Sets of Financially Successful Modern Movies
+* **Step 2**: Perform Data Analysis of Types found in Data Set
+
+To measure financial performance, we stated that we are going to calculate the *Profit/Loss(PnL)* and *Return-On-Investment(RoI)* metrics for each movie. Let's define what those are mathematically:
+
+> $PnL = (Total Worldwide Box Office Gross) - (Production Budget)$
+
+> $RoI = (PnL)/(Production Budget)$
+
+For a movie to be considered a financial success, a movie must generate profit($), but also have a high rate of return (%). 
+Let's generate a combined, cleaned, and filtered data set of only modern movies that meet both of the high PnL and high RoI criteria.
+
+With that data set, we will in parallel merge genre data for genre analysis, and merge principal data for cast and crew analysis.
+
+![graph1](./images/Methods.png)
 ***
-Questions to consider:
-* How did you prepare, analyze or model the data?
-* Why is this approach appropriate given the data and the business problem?
-***
 
-## Results
+## Analysis
 
-Present your key results. For Phase 1, this will be findings from your descriptive analysis.
+We will begin by exploring production budgets and to see if they have any relationships to total box office gross, profit/loss, and return-on-investment. Judging by any trends and patterns we find, we will formulate a budget recommendation.
 
-***
-Questions to consider:
-* How do you interpret the results?
-* How confident are you that your results would generalize beyond the data you have?
-***
+Then, we will use the merged genre data to analyze the most frequently occuring genres. We can group by genre and look at aggregated statistics to see how different genres typically perform. This will help us make a genre recommendation.
 
-Here is an example of how to embed images from your sub-folder:
-
-### Visual 1
-![graph1](./images/viz1.png)
+Lastly, we will use the merged cast and crew data to explore the aggregated statistics per individual director, writer, actor, and actress. We should be able to recommend the best fitting castt and crew that also meet our budget and genre trends.
 
 ## Conclusions
 
@@ -90,7 +94,8 @@ This combination is almost guaranteed to be the greatest movie of all time.
 
 ## For More Information
 
-Please review the full analysis in [the Jupyter Notebook](./dsc-phase1-project-FINAL.ipynb) or the [presentation](./Tom Cruise Cannot Lose - Presentation.pdf).
+Please review the full analysis in [the Jupyter Notebook](./dsc-phase1-project-FINAL.ipynb) 
+or the [presentation](./Tom Cruise Cannot Lose - Presentation.pdf)
 
 For any additional questions, please contact **Victor Kang - mr.victorkang@gmail.com**
 
@@ -106,3 +111,4 @@ Describe the structure of your repository and its contents, for example:
 ├── zippedData                                    <- Both sourced externally and generated from code
 └── images                                        <- Both sourced externally and generated from code
 ```
+![graph1](./images/Methods.png)
