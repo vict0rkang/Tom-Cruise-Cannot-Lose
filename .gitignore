@@ -155,3 +155,12 @@ ipython_config.py
 __pycache__/
 *.py[cod]
 *$py.class
+
+#specific ignore files for Project
+Tom Cruise Cannot Lose - Presentation.pptx
+Tom Cruise Cannot Lose - Notebook.pdf
+zippedData/title.principals.tsv.gz
+zippedData/movies budgets.csv
+zippedData/name.basics.tsv.gz
+zippedData/im.db
+zippedData/title.basics.tsv.gz
