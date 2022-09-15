@@ -95,7 +95,7 @@ This combination is almost guaranteed to be the greatest movie of all time.
 ## For More Information
 
 Please review the full analysis in [the Jupyter Notebook](./dsc-phase1-project-FINAL.ipynb) 
-or the [presentation](./Tom Cruise Cannot Lose - Presentation.pdf)
+or  [the Presentation](./Tom Cruise Cannot Lose - Presentation.pdf)
 
 For any additional questions, please contact **Victor Kang - mr.victorkang@gmail.com**
 
@@ -111,4 +111,4 @@ Describe the structure of your repository and its contents, for example:
 ├── zippedData                                    <- Both sourced externally and generated from code
 └── images                                        <- Both sourced externally and generated from code
 ```
-![graph1](./images/Methods.png)
+![graph1](./images/TCL.jpeg)
